@@ -9,7 +9,10 @@
     <title>Hello, pybo!</title>
 </head>
 <body>
+{% include "navbar.html" %}
 {% block content %}
 {% endblock %}
+<script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'boostrap.min.js' %}"></script>
 </body>
 </html>
