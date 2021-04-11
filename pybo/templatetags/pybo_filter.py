@@ -1,8 +1,15 @@
+import markdown
 from django import template
-
+from django.utils.safestring import mark_safe
 register = template.Library()
 
 
-@register.filter
+@register.filter()
 def sub(self, arg):
     return self - arg
+
+
+@register.filter()
+def mark(value):
+    extensions = ["nl2br", "fenced_code"]
+    return mark_safe(markdown.markdown(value, extensions=extensions))
